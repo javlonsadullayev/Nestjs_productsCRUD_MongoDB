@@ -23,7 +23,7 @@ export class ProductService {
   async findOne(id: string) {
     const product = await this.productModel.findById(id);
     if (!product) {
-      throw new NotFoundException('Product topilmadi');
+      throw new NotFoundException('User not found');
     }
     return product;
   }
@@ -35,7 +35,7 @@ export class ProductService {
       { new: true },
     );
     if (!product) {
-      throw new NotFoundException('Product topilmadi');
+      throw new NotFoundException('User not found');
     }
     return product;
   }
@@ -43,7 +43,7 @@ export class ProductService {
   async remove(id: string) {
     const product = await this.productModel.findByIdAndDelete(id);
     if (!product) {
-      throw new NotFoundException('Product topilmadi');
+      throw new NotFoundException('User not found');
     }
     return product;
   }
